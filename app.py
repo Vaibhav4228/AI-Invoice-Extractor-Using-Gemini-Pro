@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables from .env.
 
-import streamlit as st
+import streamlit as st # type: ignore
 import os
 # import pathlib
 # import textwrap
@@ -44,7 +44,7 @@ def input_image_setup(uploaded_file):
 
 ##initialize our streamlit app
 
-st.set_page_config(page_title=" Vib AI INVOICE EXTRACTOR ")
+st.set_page_config(page_title=" Get Your Student Info ")
 
 st.header("Gemini Application")
 input=st.text_input("Input Prompt: ",key="input")
@@ -55,12 +55,10 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image.", use_column_width=True)
 
 
-submit=st.button("Tell me about the image")
+submit=st.button("Analysis it and give me the poor performance student list in graphs")
 
 input_prompt = """
-               You are an expert in understanding invoices.
-               You will receive input images as invoices &
-               you will have to answer questions based on the input image
+               You are an intelligent assistant for [School Name]'s ML-based learning platform. Use the provided data to answer user questions accurately and concisely. Be clear and include examples if relevant. If the answer is not available in the data, state, "The information is not available in the current data."
                """
 
 ## If ask button is clicked
